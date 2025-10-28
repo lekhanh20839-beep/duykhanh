@@ -1,0 +1,255 @@
+                 :root {
+                    --primary-color: #5a2a2a;
+                    --secondary-color: #d63384;
+                    --background-start: #fff0f5;
+                    --background-end: #fffafa;
+                    --card-background: rgba(255, 255, 255, 0.97);
+                    --header-bg-start: #4facfe;
+                    --header-bg-end: #00f2fe;
+                    --footer-bg: #00c6ff;
+                    --text-color: #212529;
+                    --shadow-color: rgba(0, 0, 0, 0.08);
+                    --hover-shadow: rgba(0, 0, 0, 0.12);
+                }
+                /* General Body and Layout */
+                
+                body {
+                    font-family: Arial, sans-serif;
+                    scroll-behavior: smooth;
+                    background: linear-gradient(135deg, var(--background-start) 0%, var(--background-end) 100%);
+                    background-attachment: fixed;
+                    margin: 0;
+                    padding: 20px;
+                    color: var(--text-color);
+                    transition: background 0.5s ease, color 0.5s ease;
+                }
+                
+                .wrapper {
+                    max-width: 1100px;
+                    margin: 0 auto;
+                    background: var(--card-background);
+                    box-shadow: 0 6px 20px var(--shadow-color);
+                    border-radius: 12px;
+                    padding: 18px;
+                    transition: background 0.5s ease, box-shadow 0.5s ease;
+                }
+                /* Header Navigation */
+                
+                header {
+                    background: linear-gradient(90deg, var(--header-bg-start), var(--header-bg-end));
+                    color: var(--primary-color);
+                    padding: 10px 16px;
+                    border-radius: 8px;
+                }
+                
+                header .navbar-brand {
+                    font-weight: 700;
+                    color: var(--primary-color);
+                    text-decoration: none;
+                }
+                
+                header .nav-link {
+                    color: var(--primary-color);
+                    font-weight: 600;
+                    margin-left: 6px;
+                    margin-right: 6px;
+                }
+                
+                header .nav-link:hover,
+                header .nav-link.active {
+                    color: var(--secondary-color);
+                }
+                
+                .navbar-toggler-icon {
+                    filter: grayscale(1);
+                }
+                /* Hero Section */
+                
+                .hero-banner {
+                    position: relative;
+                    background: url('image/anh2.jpg') no-repeat center/cover;
+                    height: 300px;
+                    border-radius: 8px;
+                    overflow: hidden;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    margin: 18px 0;
+                    box-shadow: 0 4px 15px var(--shadow-color);
+                }
+                
+                .banner-overlay {
+                    position: absolute;
+                    inset: 0;
+                    background: rgba(0, 0, 0, 0.32);
+                }
+                
+                .banner-content {
+                    position: relative;
+                    z-index: 2;
+                    text-align: center;
+                    color: #fff;
+                    padding: 12px;
+                    max-width: 700px;
+                }
+                
+                .banner-content h1 {
+                    font-size: 58px;
+                    margin-bottom: 8px;
+                }
+                
+                .banner-content p {
+                    margin-bottom: 12px;
+                    font-size: 28px;
+                    line-height: 1.4;
+                }
+                
+                .btn-pink {
+                    background: var(--header-bg-start);
+                    color: var(--primary-color);
+                    border: none;
+                    padding: 8px 18px;
+                    font-weight: 600;
+                    transition: background 0.3s ease, color 0.3s ease;
+                }
+                
+                .btn-pink:hover {
+                    background: var(--secondary-color);
+                    color: #fff;
+                }
+                /* Carousel & Cards */
+                
+                #carouselExampleIndicators {
+                    max-height: 300px;
+                    overflow: hidden;
+                    border-radius: 8px;
+                }
+                
+                #carouselExampleIndicators img {
+                    height: 300px;
+                    object-fit: cover;
+                    width: 100%;
+                }
+                
+                .home-card .card-img-top {
+                    height: 180px;
+                    object-fit: cover;
+                }
+                
+                .card {
+                    transition: transform 0.2s, box-shadow 0.2s;
+                    background: var(--card-background);
+                }
+                
+                .card:hover {
+                    transform: translateY(-5px);
+                    box-shadow: 0 8px 20px var(--hover-shadow);
+                }
+                /* Gallery Section */
+                
+                #gallery .img-fluid {
+                    height: 140px;
+                    object-fit: cover;
+                    width: 100%;
+                    border-radius: 8px;
+                    transition: transform 0.25s, box-shadow 0.25s;
+                    box-shadow: 0 4px 12px var(--shadow-color);
+                }
+                
+                #gallery .img-fluid:hover {
+                    transform: scale(1.04);
+                }
+                /* Floating Logo */
+                
+                .floating-logo {
+                    position: fixed;
+                    right: 28px;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    width: 72px;
+                    z-index: 1200;
+                    animation: float 3s ease-in-out infinite;
+                    cursor: pointer;
+                }
+                /* hiệu úng nỗi của hình */
+                
+                @keyframes float {
+                    0%,
+                    100% {
+                        transform: translateY(-50%) translateY(0);
+                    }
+                    50% {
+                        transform: translateY(-50%) translateY(-12px);
+                    }
+                }
+                /* Theme Toggle Button */
+                
+                .theme-toggle {
+                    position: fixed;
+                    bottom: 20px;
+                    right: 20px;
+                    z-index: 1000;
+                    background: var(--primary-color);
+                    color: white;
+                    border: none;
+                    border-radius: 50%;
+                    width: 50px;
+                    height: 50px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    cursor: pointer;
+                    box-shadow: 0 4px 10px var(--shadow-color);
+                    transition: background 0.3s ease;
+                }
+                
+                .theme-toggle:hover {
+                    background: var(--secondary-color);
+                }
+                
+                .theme-toggle svg {
+                    width: 24px;
+                    height: 24px;
+                }
+                /* Sections & Footer */
+                
+                main section {
+                    display: none;
+                }
+                
+                main section.active {
+                    display: block;
+                }
+                
+                footer {
+                    margin-top: 14px;
+                    border-radius: 8px;
+                    background: var(--footer-bg);
+                    color: var(--primary-color);
+                    transition: background 0.5s ease, color 0.5s ease;
+                }
+                
+                .contact-info {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: flex-start;
+                }
+                
+                .rating .star {
+                    font-size: 24px;
+                    color: gray;
+                    cursor: pointer;
+                    transition: color 0.2s;
+                }
+                
+                .rating .star.active {
+                    color: gold;
+                }
+
+                .logo-img {
+                    background: transparent;    
+                    border: none;               
+                    mix-blend-mode: multiply;   
+                    border-radius: 50%;        
+}
